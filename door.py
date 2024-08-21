@@ -1,14 +1,22 @@
 class Door:
     """
-    Diese Klasse beschreibt eine Türe mit der Eigenschaft color (Farbe) und den Zuständen
-    door_is_open (für geöffnete Türe) sowie door_is_locked (für verriegelte Türe).
-    Die Türe überwacht die beiden Zustände und verhindert so Aktionen, die nicht möglich sind.
-    Das verriegeln selber delegiert die Türe an ein Objekt vom Typ Door_lock (Türschloss).
+    Diese Klasse beschreibt eine Türe mit der Eigenschaft color (Farbe) und den
+    Zuständen
+    door_is_open (für geöffnete Türe) sowie door_is_locked (für verriegelte
+    Türe).
+    Die Türe überwacht die beiden Zustände und verhindert so Aktionen, die
+    nicht möglich
+    sind.
+     Das verriegeln selber delegiert die Türe an ein Objekt vom Typ Door_lock
+      (Türschloss).
     """
 
-    # Mit dem Keyword def wird eine Funktion bzw. eben ein Konstruktor deklariert.
-    # Der Konstruktor trägt IMMER den Namen __init__ und weist als ersten Parameter den Wert self auf.
-    # Danach folgen die Übergabeparameter, deren Werte dann den Attributen zugewiesen werden.
+    # Mit dem Keyword def wird eine Funktion bzw. eben ein Konstruktor
+    # deklariert.
+    # Der Konstruktor trägt IMMER den Namen __init__ und weist als ersten
+    # Parameter den Wert self auf.
+    # Danach folgen die Übergabeparameter, deren Werte dann den Attributen
+    # zugewiesen werden.
     # Attribute können aber auch mit einem fixen Wert initialisiert werden.
     # Konstruktoren werden als Erstes im Programm angeschrieben.
     def __init__(self, ref2door_lock, base_color):
@@ -17,7 +25,8 @@ class Door:
         :param ref2door_lock:
         :param base_color:
         """
-        # ein privates Attribut muss im Konstruktor initialisiert werden und ist dann in der Klasse
+        # ein privates Attribut muss im Konstruktor initialisiert werden und
+        # ist dann in der Klasse
         # über self._name_des_Attributs ansprechbar.
         self._the_door_lock = ref2door_lock
         # Hier wird der Setter eines Attributs aufgerufen (siehe unten)
@@ -32,13 +41,14 @@ class Door:
         Methode für das öffnen der Türe.
         Das ist aber nur möglich, wenn die Türe nicht verriegelt ist.
         """
-        if self._door_is_locked == False:
+        if self._door_is_locked is False:
             self._door_is_open = True
 
     def close_the_door(self):
         """
         Methode für das schliessen der Türe. jfdksalöjfölsajflk
-        Das geht immer, auch wenn die Türe schon geschlossen oder verriegelt ist. Der Zustand ändert dann nämlich nicht.
+        Das geht immer, auch wenn die Türe schon geschlossen oder verriegelt
+        ist. Der Zustand ändert dann nämlich nicht.
         """
         self._door_is_open = False
 
@@ -46,16 +56,18 @@ class Door:
         """
         Methode für das verriegeln der Türe.
         Das ist nur möglich, wenn die Türe nicht offen ist.
-        Für das verriegeln ist aber das Türschloss zuständig. Es weiss wie das geht.
+        Für das verriegeln ist aber das Türschloss zuständig. Es weiss wie das
+         geht.
         """
-        if self._door_is_open == False:
+        if self._door_is_open is False:
             self._door_is_locked = self._the_door_lock.lock()
 
     def unlock_the_door(self):
         """
         Methode für das entriegeln der Türe
         Das ist nur möglich, wenn die Türe verriegelt ist.
-        Für das entriegeln ist aber das Türschloss zuständig. Es weiss wie das geht.
+        Für das entriegeln ist aber das Türschloss zuständig. Es weiss wie das
+         geht.
         """
         if self._door_is_locked:
             self._door_is_locked = self._the_door_lock.unlock()
@@ -68,7 +80,8 @@ class Door:
               f'Türe offen: {self._door_is_open}'
               f'Türe verriegelt: {self._door_is_locked}')
 
-    # Am Ende folgen die getter- und setter-Methoden für die Attribute der Klasse
+    # Am Ende folgen die getter- und setter-Methoden für die Attribute der
+    # Klasse
     # getter werden mit der Anotation @property markiert.
     @property
     def door_is_open(self):
@@ -115,12 +128,21 @@ class DoorLock:
     """
 
     def __init__(self):
+        """
+        hihihih
+        """
         print("ein Schloss erzeugt")
 
     def lock(self):
+        """
+        hahahah
+        """
         return True
 
     def unlock(self):
+        """
+        hehehehe
+        """
         return False
 
 
